@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Toaster } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import { nanoid } from "nanoid";
@@ -7,12 +7,12 @@ import Script from "next/script";
 import { cookies } from "next/headers";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import { ConvexClientProvider } from "@/components/providers/convex-provider";
-import { ModalProvider } from "@/components/providers/modal-provider";
-import { EdgeStoreProvider } from "@/lib/edgestore";
-import { UTMTracker } from "./utm-stats/UTMTracker";
-import { TurnstileGate } from "@/components/turnstile-gate";
-import { TURNSTILE_COOKIE_NAME, TURNSTILE_COOKIE_VALUE } from "@/lib/turnstile";
+import ConvexClientProvider from "@/components/ConvexClientProvider";
+// import { ModalProvider } from "@/components/m";
+// import { EdgeStoreProvider } from "@/lib/edgestore";
+// import { UTMTracker } from "./utm-stats/UTMTracker";
+// import { TurnstileGate } from "@/components/turnstile-gate";
+// import { TURNSTILE_COOKIE_NAME, TURNSTILE_COOKIE_VALUE } from "@/lib/turnstile";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,8 +40,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const initialTurnstileVerified =
-    cookies().get(TURNSTILE_COOKIE_NAME)?.value === TURNSTILE_COOKIE_VALUE;
+  // const initialTurnstileVerified =
+  //   cookies().get(TURNSTILE_COOKIE_NAME)?.value === TURNSTILE_COOKIE_VALUE;
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -53,7 +53,7 @@ export default async function RootLayout({
           />
         ) : null}
         <ConvexClientProvider>
-          <EdgeStoreProvider>
+          {/* <EdgeStoreProvider> */}
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -62,12 +62,12 @@ export default async function RootLayout({
               storageKey="notion-clone-2"
             >
               <Toaster position="bottom-center" />
-              <ModalProvider />
+              {/* <ModalProvider />
               <TurnstileGate initialVerified={initialTurnstileVerified} />
-              <UTMTracker userId={`28-${nanoid()}`} />
+              <UTMTracker userId={`28-${nanoid()}`} /> */}
               {children}
             </ThemeProvider>
-          </EdgeStoreProvider>
+          {/* </EdgeStoreProvider> */}
         </ConvexClientProvider>
       </body>
     </html>

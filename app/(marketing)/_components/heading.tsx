@@ -1,11 +1,11 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Heroes } from "./Heroes";
+import { Heroes } from "./heroes";
 import { useConvexAuth } from "convex/react";
 import { Spinner } from "@/components/spinner";
 import Link from "next/link";
-import { SignInButton } from "@clerk/clerk-react";
+import { SignInButton } from "@clerk/nextjs"
 
 export default function Heading() {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -26,12 +26,12 @@ export default function Heading() {
         </div>
       )}
       {isAuthenticated && !isLoading && (
-        <Button asChild>
-          <Link href="/documents">
+        <Link href="/documents">
+          <Button>
             Enter Jotion
             <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       )}
       {!isAuthenticated && !isLoading && (
         <SignInButton mode="modal">

@@ -5,7 +5,7 @@ import { useScrollTop } from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
 import { Logo } from "./logo";
 import { ModeToggle } from "@/components/mode-toggle";
-import { SignInButton, UserButton } from "@clerk/clerk-react";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/spinner";
 import Link from "next/link";
@@ -38,10 +38,12 @@ export function Navbar() {
         )}
         {isAuthenticated && !isLoading && (
           <>
-            <Button variant="ghost" size="sm" asChild>
-              <Link href="/documents">Enter Jotion</Link>
-            </Button>
-            <UserButton afterSignOutUrl="/" />
+            <Link href="/documents">
+              <Button variant="ghost" size="sm">
+                Enter Jotion
+              </Button>
+            </Link>
+            <UserButton />
           </>
         )}
         <ModeToggle />
