@@ -24,7 +24,7 @@ export const Heading = () => {
 
       <h1
         id="hero-title"
-        className="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-[-0.05em] text-[#252522] sm:text-5xl md:text-7xl dark:text-[#f6f5f2]"
+        className="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-tighter text-[#252522] sm:text-5xl md:text-7xl dark:text-[#f6f5f2]"
       >
         Your ideas deserve
         <br className="hidden sm:block" /> a place to{" "}

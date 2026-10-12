@@ -27,7 +27,7 @@ export function Features() {
     <section
       id="features"
       aria-labelledby="features-title"
-      className="scroll-mt-24 border-y border-[#f0e5d8] bg-white/65 px-4 py-20 sm:px-6 sm:py-24 dark:border-white/10 dark:bg-white/[0.02]"
+      className="scroll-mt-24 border-y border-[#f0e5d8] bg-white/65 px-4 py-20 sm:px-6 sm:py-24 dark:border-white/10 dark:bg-white/2"
     >
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
