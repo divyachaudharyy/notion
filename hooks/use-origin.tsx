@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-export function useOrigin () {
+// export function useOrigin () {
 
-  const [mounted,setMounted] = useState(false)
+//   const [mounted,setMounted] = useState(false)
 
-  const origin = typeof window !== "undefined" && window.location.origin ? window.location.origin : ''
+//   const origin = typeof window !== "undefined" && window.location.origin ? window.location.origin : ''
   
-  useEffect(() => {
-    setMounted(true)
-  },[])
+//   useEffect(() => {
+//     setMounted(true)
+//   },[])
 
-  if (!mounted) return ""
+//   if (!mounted) return ""
 
-  return origin
-}
+//   return origin
+// }

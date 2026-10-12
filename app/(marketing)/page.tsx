@@ -1,5 +1,5 @@
 import { Footer } from "./_components/footer";
-import Heading from "./_components/heading";
+import {Heading} from "./_components/heading";
 import { Heroes } from "./_components/heroes";
 
 export default function MarketingPage () {

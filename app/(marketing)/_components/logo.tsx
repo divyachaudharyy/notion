@@ -10,24 +10,31 @@ const font = Poppins({
 
 export const Logo = () => {
   return (
-    <div className="hidden md:flex items-center gap-x-2">
+    <div className="flex shrink-0 items-center gap-2">
       <Image
         src="/logo.svg"
-        height="40"
-        width="40"
-        alt="Logo"
+        height={32}
+        width={32}
+        alt=""
         className="dark:hidden"
       />
+
       <Image
         src="/logo-dark.svg"
-        height="40"
-        width="40"
-        alt="Logo"
+        height={32}
+        width={32}
+        alt=""
         className="hidden dark:block"
       />
-      <p className={cn("font-semibold", font.className)}>
-        Jotion
+
+      <p
+        className={cn(
+          "text-lg font-semibold tracking-tight",
+          font.className
+        )}
+      >
+        Noterr
       </p>
     </div>
-  )
-}
+  );
+};
